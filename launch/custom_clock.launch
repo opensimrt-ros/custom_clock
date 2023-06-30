@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
 <launch>
+	<arg name="slowdown_rate" default="10" />
 	<node name="sim_clock" pkg="custom_clock" type="custom_clock_node" >
 		<param name="start_playing" 		value="true"/>
 		<param name="clock_step_microsseconds" 	value="1000"/>
-		<param name="slowdown_rate" 		value="10"/>
+		<param name="slowdown_rate" 		value="$(arg slowdown_rate)"/>
 	</node>
 </launch>
