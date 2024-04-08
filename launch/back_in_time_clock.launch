@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+	<arg name="slowdown_rate" default="1" />
+	<arg name="start_at_secs"		default="1668000000"/>
+	<arg name="start_at_nsecs"		default="0"/>
+	<arg name="clock_step_microsseconds" 	default="1000"/>
+	<node name="sim_clock" pkg="custom_clock" type="custom_clock_node" >
+		<param name="start_playing" 		value="true"/>
+		<param name="clock_step_microsseconds" 	value="$(arg clock_step_microsseconds)"/>
+		<param name="slowdown_rate" 		value="$(arg slowdown_rate)"/>
+		<param name="use_custom_start_time"	value="true"/>
+		<param name="start_at_secs"		value="$(arg start_at_secs)"/>
+		<param name="start_at_nsecs"		value="$(arg start_at_nsecs)"/>
+	</node>
+</launch>
